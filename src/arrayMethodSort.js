@@ -8,11 +8,14 @@ function applyCustomSort() {
     if (typeof compareFunction !== 'function') {
       // eslint-disable-next-line no-param-reassign
       compareFunction = function (a, b) {
-        if (a === b) {
+        const aStr = String(a);
+        const bStr = String(b);
+
+        if (aStr === bStr) {
           return 0;
         }
 
-        return a < b ? -1 : 1;
+        return aStr < bStr ? -1 : 1;
       };
     }
 
